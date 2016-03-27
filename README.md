@@ -9,6 +9,7 @@ react-babel-starter is a simple biolerplate for React.js 101 training of [Mokove
 To setup the package.
 
 ```
+npm install --global gulp
 npm install
 gulp build
 ```
