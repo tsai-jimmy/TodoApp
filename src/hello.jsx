@@ -1,25 +1,42 @@
-var Hello = React.createClass({
+var NameInput = React.createClass({
+  markdownGithubParser: function(data) {
+    var self = this;
+    $.ajax({
+      method: 'POST',
+      url: 'https://api.github.com/markdown/raw',
+      dataType: "html",
+      processData: false,
+      data: data,
+      contentType: "text/plain",
+      success: function(data) {
+        $(self.props.target).html(data);
+      },
+      error: function(xhr, status, err) {
+        console.log(err + ': ' + status);
+      }
+    });
+  },
+  markdownLocalParser: function(data) {
+    var converter = new showdown.Converter();
+    $(this.props.target).html(converter.makeHtml(data));
+  },
+  handleChange: function(event) {
+    if (this.props.parser && this.props.parser === "local")
+      this.markdownLocalParser(event.target.value);
+    else
+      this.markdownGithubParser(event.target.value);
+  },
   render: function() {
     return (
-      <div>
-        Hello {this.props.name} 
-        <List></List>
-      </div> );
-  }
-});
-
-var List = React.createClass({
-  render: function() {
-    return (
-      <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-      </ul>);
+      <textarea 
+      rows={this.props.rows}
+      className="form-control" 
+      onChange={this.handleChange} />
+    );
   }
 });
 
 ReactDOM.render(
-  <Hello name="World !"></Hello>,
+  <NameInput rows="5" target="#article" parser="local" />,
   document.getElementById('container')
 );
