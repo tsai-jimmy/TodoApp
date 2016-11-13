@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -7,7 +7,7 @@ exports.TodoList = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -29,10 +29,22 @@ var TodoList = exports.TodoList = function (_Component) {
 	}
 
 	_createClass(TodoList, [{
-		key: 'componentWillUnmount',
+		key: "componentWillUnmount",
 		value: function componentWillUnmount() {}
+	}, {
+		key: "componentDidMount",
+		value: function componentDidMount() {}
+	}, {
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement("ul", null, this.props.items.map(function (item) {
+				return _react2.default.createElement("li", { key: item.id }, item.text);
+			}));
+		}
 	}]);
 
 	return TodoList;
 }(_react.Component);
+
+TodoList.defaultProps = {};
 //# sourceMappingURL=TodoList.js.map

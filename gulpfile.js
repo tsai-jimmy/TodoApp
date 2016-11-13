@@ -43,15 +43,22 @@ gulp.task('build', function () {
 
 
 
-//Browserify use
+//Browserify use  打包成 app.js
 gulp.task('browserify', function(){
     return gulp.src('src/app.js').pipe(browserify()).pipe(gulp.dest('dist'));
 });
 
+//Browserify use  打包成 todo.js
+gulp.task('todo', function(){
+    return gulp.src('src/todo.js').pipe(browserify()).pipe(gulp.dest('dist'));
+});
+
+
 
 // Watch Files For Changes
 gulp.task('watch', function () {
-    gulp.watch(['src/**/*.jsx'], ['build','browserify']);
+    gulp.watch(['src/**/*.jsx'], ['build']);
+    gulp.watch(['src/**/*.js'], ['todo']);
 });
 
 

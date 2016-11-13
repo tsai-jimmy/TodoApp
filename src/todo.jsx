@@ -1,8 +1,8 @@
 import React from 'react';
-import {render} from 'react-fom';
-import {TodoApp} from './Components/TodoApp';
+import { render } from 'react-dom';
+import { TodoApp } from './Components/TodoApp';
 
-render (
+render(
   <TodoApp />,
-  document.getElementById('contnet')
-)
+  document.getElementById('content')
+);
