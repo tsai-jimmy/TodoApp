@@ -19,5 +19,5 @@ import { Title } from './Components/Title';
 	}
 });*/
 
-render (<Title text="hello2"/>,content);
+render (<Title text="hello2"/>,test);
 

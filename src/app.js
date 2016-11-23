@@ -21,10 +21,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 	}
 });*/
 
-(0, _reactDom.render)(_react2.default.createElement(_Title.Title, { text: "hello2" }), content); /*
-                                                                                                 ReactDOM.render(
-                                                                                                 	<h1>Hello</h1>,
-                                                                                                 	document.getElementById('content')
-                                                                                                 );
-                                                                                                 */
+(0, _reactDom.render)(_react2.default.createElement(_Title.Title, { text: "hello2" }), test); /*
+                                                                                              ReactDOM.render(
+                                                                                              	<h1>Hello</h1>,
+                                                                                              	document.getElementById('content')
+                                                                                              );
+                                                                                              */
 //# sourceMappingURL=app.js.map

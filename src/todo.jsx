@@ -4,5 +4,5 @@ import { TodoApp } from './Components/TodoApp';
 
 render(
   <TodoApp />,
-  document.getElementById('content')
+  document.getElementById('test')
 );
